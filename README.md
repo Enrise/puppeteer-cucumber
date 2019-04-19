@@ -12,7 +12,7 @@ Compose file:
 ...
 services:
     puppeteer:
-        image: enrise/puppeteer-cucumber
+        image: enrise/puppeteer-cucumber:latest
         volumes:
             - ./features:/home/node/app/features
 ...
@@ -30,8 +30,8 @@ With options:
 
 Run your tests:
 
-``docker run -v `pwd`/features/:/home/node/app/features puppeteer:latest``
+``docker run -v `pwd`/features/:/home/node/app/features enrise/puppeteer-cucumber:latest``
 
 with option:
 
-``docker run -v `pwd`/features/:/home/node/app/features puppeteer:latest --tags '@focus'``
+``docker run -v `pwd`/features/:/home/node/app/features enrise/puppeteer-cucumber:latest --tags '@focus'``
