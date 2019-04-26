@@ -1,7 +1,7 @@
 {
-  "name": "pupeteer_cucumber_tools",
+  "name": "puppeteer_cucumber_tools",
   "version": "1.2.0",
-  "description": "A docker image which includes pupeteer and cucumber",
+  "description": "A docker image which includes puppeteer and cucumber",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Enrise/puppeteer-cucumber.git"
