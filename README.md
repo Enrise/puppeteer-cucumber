@@ -9,13 +9,13 @@ This image can be used to run acceptance tests with features written in cucumber
 Compose file:
 
 ```yml
-...
+
+---
 services:
-    puppeteer:
-        image: enrise/puppeteer-cucumber:latest
-        volumes:
-            - ./features:/home/node/app/features
-...
+  puppeteer:
+    image: enrise/puppeteer-cucumber:latest
+    volumes:
+      - ./features:/home/node/app/features
 ```
 
 Run your tests:
@@ -30,8 +30,15 @@ With options:
 
 Run your tests:
 
-``docker run -v `pwd`/features/:/home/node/app/features enrise/puppeteer-cucumber:latest``
+`` docker run -v `pwd`/features/:/home/node/app/features enrise/puppeteer-cucumber:latest ``
 
 with option:
 
-``docker run -v `pwd`/features/:/home/node/app/features enrise/puppeteer-cucumber:latest --tags '@focus'``
+`` docker run -v `pwd`/features/:/home/node/app/features enrise/puppeteer-cucumber:latest --tags '@focus' ``
+
+## Flavours
+
+There are two flavours available:
+
+- A clean version
+- A version with common tools (axios, lodash)

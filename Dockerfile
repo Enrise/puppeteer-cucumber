@@ -25,9 +25,10 @@ RUN mkdir -p /home/node/app \
 
 WORKDIR /home/node/app
 
+# Copy package details
+COPY ./package.json ./package-lock.json ./
+
 # Install npm packages
-RUN npm install \
-    puppeteer@1.14.0 \
-    cucumber@5.1.0
+RUN npm ci
 
 ENTRYPOINT [ "node_modules/.bin/cucumber-js" ]

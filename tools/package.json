@@ -1,0 +1,21 @@
+{
+  "name": "pupeteer_cucumber_tools",
+  "version": "1.2.0",
+  "description": "A docker image which includes pupeteer and cucumber",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Enrise/puppeteer-cucumber.git"
+  },
+  "author": "Henk-Jan van Voorthuijsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Enrise/puppeteer-cucumber/issues"
+  },
+  "homepage": "https://github.com/Enrise/puppeteer-cucumber#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cucumber": "^5.1.0",
+    "lodash": "^4.17.11",
+    "puppeteer": "^1.15.0"
+  }
+}
