@@ -99,9 +99,10 @@
 
       // localStorage persistence
       var STORAGE_KEY = 'todos-vuejs-2.0';
+      var storage = [];
       var todoStorage = {
         fetch: function() {
-          var todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+          var todos = storage;
           todos.forEach(function(todo, index) {
             todo.id = index;
           });
@@ -109,7 +110,7 @@
           return todos;
         },
         save: function(todos) {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+          storage = todos;
         }
       };
 
