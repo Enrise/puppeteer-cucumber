@@ -1,0 +1,21 @@
+version: "3.6"
+services:
+  app:
+    image: nginx:stable-alpine
+    volumes:
+      - ./app:/usr/share/nginx/html:ro
+    ports:
+      - 8080:80
+    networks:
+      - example
+  puppeteer-cucumber:
+    image: enrise/puppeteer-cucumber:1
+    volumes:
+      - ./features:/home/node/app/features
+    networks:
+      - example
+    environment:
+      - HOST=app
+
+networks:
+  example:
