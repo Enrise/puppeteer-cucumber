@@ -31,4 +31,6 @@ COPY ./package.json ./package-lock.json ./
 # Install npm packages
 RUN npm ci
 
+USER pptruser
+
 ENTRYPOINT [ "node_modules/.bin/cucumber-js" ]

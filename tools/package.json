@@ -14,6 +14,7 @@
   "homepage": "https://github.com/Enrise/puppeteer-cucumber#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "chai": "^4.2.0",
     "cucumber": "^5.1.0",
     "lodash": "^4.17.11",
     "puppeteer": "^1.15.0"
