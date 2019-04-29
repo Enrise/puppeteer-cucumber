@@ -36,9 +36,13 @@ with option:
 
 `` docker run -v `pwd`/features/:/home/node/app/features enrise/puppeteer-cucumber:latest --tags '@focus' ``
 
-## Flavours
+## Included packages
 
-There are two flavours available:
+I included a few packages to make this image more versatile.
+Included packages:
 
-- A clean version
-- A version with common tools (axios, lodash)
+- Puppeteer
+- Cucumber
+- Chai
+- Axios
+- Lodash
