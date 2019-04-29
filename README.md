@@ -46,3 +46,7 @@ Included packages:
 - Chai
 - Axios
 - Lodash
+
+## Example
+
+Check [Example](example/example.md)
