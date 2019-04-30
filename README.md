@@ -49,4 +49,4 @@ Included packages:
 
 ## Example
 
-Check [Example](example/example.md)
+Check [Example](example/README.md)
