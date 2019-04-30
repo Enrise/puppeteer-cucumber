@@ -1,6 +1,7 @@
 const { AfterAll, BeforeAll, Before } = require('cucumber');
-const { navigateTo, closeBrowser } = require('./browser');
 const puppeteer = require('puppeteer');
+const { navigateTo, closeBrowser } = require('./browser');
+const { getDockerContainerIp } = require('./docker');
 var scope = require('./scope');
 
 AfterAll(async () => {
@@ -10,6 +11,7 @@ AfterAll(async () => {
 BeforeAll(async () => {
   scope.driver = puppeteer;
   scope.context = {};
+  scope.appIp = await getDockerContainerIp('app');
 });
 
 Before(async () => {

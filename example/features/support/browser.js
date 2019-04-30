@@ -13,7 +13,7 @@ const navigateTo = async url => {
   await closePage();
   await getBrowser();
   scope.context.currentPage = await scope.browser.newPage();
-  await scope.context.currentPage.goto('http://app' + url, {
+  await scope.context.currentPage.goto('http://' + scope.appIp + url, {
     waitUntil: 'networkidle2'
   });
 };
