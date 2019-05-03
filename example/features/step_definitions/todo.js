@@ -2,7 +2,7 @@ const { When, Then } = require('cucumber');
 const { getElementText } = require('../support/browser');
 const { expect } = require('chai');
 const scope = require('../support/scope');
-const { addTodoItem } = require('../support/browser');
+const { addTodoItem, deleteTodoItem } = require('../support/todo');
 
 When('I add a todo item with the text {string}', async function(todoText) {
   await addTodoItem(todoText);
@@ -14,10 +14,8 @@ When('I have a todo list with {int} item(s)', async function(numberOfItems) {
   }
 });
 
-When('I delete the first item', async function() {
-  const page = scope.context.currentPage;
-  await page.hover('.todo');
-  await page.click('.todo button.destroy');
+When('I delete item #{int}', async function(itemNr) {
+  await deleteTodoItem(itemNr);
 });
 
 Then('the list has {int} item(s)', async function(numberOfItems) {

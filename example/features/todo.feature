@@ -13,6 +13,6 @@ Feature: Todo
         Then the list has 2 items
 
     Scenario: Deleting a todo item
-        When I have a todo list with 2 items
-        And I delete the first item
+        Given I have a todo list with 2 items
+        When I delete item #1
         Then the list has 1 item

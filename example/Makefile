@@ -8,6 +8,7 @@ start: do-start
 stop: do-stop
 kill: do-kill
 test: do-start do-test
+test-focus: do-start do-test-focus
 
 # ===========================
 # Snippets
@@ -37,3 +38,7 @@ do-kill:
 do-test:
 	@echo "\n=== Test ===\n"
 	docker-compose run puppeteer-cucumber
+
+do-test-focus:
+	@echo "\n=== Test ===\n"
+	docker-compose run puppeteer-cucumber --tags '@focus'

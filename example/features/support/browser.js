@@ -46,18 +46,10 @@ const getElementText = async selector => {
   );
 };
 
-const addTodoItem = async todoText => {
-  const page = scope.context.currentPage;
-  const input = await page.$('input.new-todo');
-  await input.type(todoText);
-  await input.press('Enter');
-};
-
 module.exports = {
   getBrowser,
   navigateTo,
   closePage,
   closeBrowser,
-  getElementText,
-  addTodoItem
+  getElementText
 };
