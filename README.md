@@ -4,7 +4,7 @@ An image that includes a headless chrome setup with puppeteer and cucumber-js.
 
 This image can be used to run acceptance tests with features written in cucumber.
 
-## Usage with Docker-compose
+## Use with Docker-compose
 
 Compose file:
 
@@ -22,11 +22,11 @@ Run your tests:
 
 `docker-compose run puppeteer`
 
-With options:
+even with options:
 
 `docker-compose run puppeteer --tags '@focus'`
 
-## Usage with Docker
+## Use with Docker
 
 Run your tests:
 
