@@ -15,13 +15,12 @@ RUN apk update && apk upgrade && \
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 
 # Add user so we don't need --no-sandbox.
-RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
-    && mkdir -p /home/pptruser/Downloads \
-    && chown -R pptruser:pptruser /home/pptruser
+RUN addgroup -S pptruser && adduser -S -g pptruser pptruser
 
 RUN mkdir -p /home/node/app \
-    && chown -R node:node /home/node/app \
     && chown -R pptruser:pptruser /home/node/app
+
+USER pptruser
 
 WORKDIR /home/node/app
 
@@ -30,7 +29,5 @@ COPY ./package.json ./package-lock.json ./
 
 # Install npm packages
 RUN npm ci
-
-USER pptruser
 
 ENTRYPOINT [ "node_modules/.bin/cucumber-js" ]
