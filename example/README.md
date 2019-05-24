@@ -8,8 +8,8 @@ For other make commands run `make info`.
 
 ## Cant run make?
 
-- Start app: `docker-compose up -d app`
-- Run tests: `docker-compose run --rm puppeteer-cucumber`
+- Start app: `USERID=$(id -u) GROUPID=$(id -g) docker-compose up -d app`
+- Run tests: `USERID=$(id -u) GROUPID=$(id -g) docker-compose run --rm puppeteer-cucumber`
 
 ## Credits
 

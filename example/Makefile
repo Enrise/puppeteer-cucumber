@@ -14,6 +14,8 @@ test-focus: do-start do-test-focus
 # Snippets
 # ===========================
 
+set-ids = USERID=$$(id -u) GROUPID=$$(id -g)
+
 do-show-commands:
 	@echo "\n=== Make commands ===\n"
 	@echo "make start         Start the app container"
@@ -24,21 +26,21 @@ do-show-commands:
 
 do-start:
 	@echo "\n=== Start app ===\n"
-	docker-compose up -d app
+	${set-ids} docker-compose up -d app
 	@echo "\n> Your app is running on http://localhost:8080\n"
 
 do-stop:
 	@echo "\n=== Stop app ===\n"
-	docker-compose stop
+	${set-ids} docker-compose stop
 
 do-kill:
 	@echo "\n=== Kill app ===\n"
-	docker-compose down
+	${set-ids} docker-compose down
 
 do-test:
 	@echo "\n=== Test ===\n"
-	docker-compose run puppeteer-cucumber
+	${set-ids} docker-compose run puppeteer-cucumber
 
 do-test-focus:
 	@echo "\n=== Test ===\n"
-	docker-compose run puppeteer-cucumber --tags '@focus'
+	${set-ids} docker-compose run puppeteer-cucumber --tags '@focus'

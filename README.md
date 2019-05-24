@@ -36,6 +36,10 @@ with option:
 
 `` docker run -v `pwd`/features/:/home/node/app/features enrise/puppeteer-cucumber:latest --tags '@focus' ``
 
+## Run as current user
+
+See the example on how to run the test as the current user (especially important when creating screenshots)
+
 ## Included packages
 
 I included a few packages to make this image more versatile.

@@ -46,10 +46,16 @@ const getElementText = async selector => {
   );
 };
 
+const takeScreenshot = async filename => {
+  const page = scope.context.currentPage;
+  await page.screenshot({ path: `screenshots/${filename}`, fullPage: true });
+};
+
 module.exports = {
   getBrowser,
   navigateTo,
   closePage,
   closeBrowser,
-  getElementText
+  getElementText,
+  takeScreenshot
 };

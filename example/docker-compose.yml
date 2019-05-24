@@ -12,6 +12,8 @@ services:
     image: enrise/puppeteer-cucumber:1
     volumes:
       - ./features:/home/node/app/features
+      - ./screenshots:/home/node/app/screenshots
+    user: ${USERID}:${GROUPID}
     networks:
       - example
     environment:
