@@ -11,7 +11,7 @@ AfterAll(async () => {
 BeforeAll(async () => {
   scope.driver = puppeteer;
   scope.context = {};
-  scope.appIp = await getDockerContainerIp('app');
+  scope.appIp = await getDockerContainerIp(process.env.HOST);
 });
 
 Before(async () => {
