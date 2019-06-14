@@ -47,9 +47,10 @@ Included packages:
 
 - Puppeteer
 - Cucumber
-- Chai
+- Chai, Chai-http, Chai-dom, Chai-json
 - Axios
 - Lodash
+- Cucumber-html-reporter
 
 ## Example
 
