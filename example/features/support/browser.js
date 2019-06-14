@@ -1,4 +1,6 @@
-var scope = require('./scope');
+const scope = require('./scope');
+const fs = require('fs');
+const path = require('path');
 
 const getBrowser = async function() {
   if (!scope.browser) {
@@ -48,7 +50,14 @@ const getElementText = async selector => {
 
 const takeScreenshot = async filename => {
   const page = scope.context.currentPage;
-  await page.screenshot({ path: `screenshots/${filename}`, fullPage: true });
+  const dir = path.dirname(`screenshots/${filename}`);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
+  return await page.screenshot({
+    path: `screenshots/${filename}`,
+    fullPage: true
+  });
 };
 
 module.exports = {

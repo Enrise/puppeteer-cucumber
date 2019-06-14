@@ -39,8 +39,8 @@ do-kill:
 
 do-test:
 	@echo "\n=== Test ===\n"
-	${set-ids} docker-compose run puppeteer-cucumber
+	${set-ids} docker-compose run --rm puppeteer-cucumber
 
 do-test-focus:
 	@echo "\n=== Test ===\n"
-	${set-ids} docker-compose run puppeteer-cucumber --tags '@focus'
+	${set-ids} docker-compose run --rm puppeteer-cucumber --tags '@focus'

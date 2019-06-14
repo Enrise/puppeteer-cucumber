@@ -21,6 +21,7 @@ When('I delete item #{int}', async function(itemNr) {
 Then('the list has {int} item(s)', async function(numberOfItems) {
   const page = scope.context.currentPage;
   const elements = await page.$$('.todo-list .todo');
+  scope.debugOutput.push(elements);
   expect(elements.length).to.equal(numberOfItems);
 });
 

@@ -1,19 +1,25 @@
-const { AfterAll, BeforeAll, Before } = require('cucumber');
-const puppeteer = require('puppeteer');
+const { AfterAll, BeforeAll, Before, After, Status } = require('cucumber');
 const { navigateTo, closeBrowser } = require('./browser');
-const { getDockerContainerIp } = require('./docker');
 var scope = require('./scope');
+const { getDockerContainerIp } = require('./docker');
+const util = require('util');
 
 AfterAll(async () => {
   await closeBrowser();
 });
 
 BeforeAll(async () => {
-  scope.driver = puppeteer;
-  scope.context = {};
   scope.appIp = await getDockerContainerIp(process.env.HOST);
 });
 
 Before(async () => {
   await navigateTo('/');
+});
+
+After(async function(testCase) {
+  if (testCase.result.status === Status.FAILED) {
+    if (scope.debugOutput.length > 0) {
+      this.attach(util.inspect(scope.debugOutput, { colors: true, depth: 3 }));
+    }
+  }
 });
