@@ -51,6 +51,7 @@ Included packages:
 - Axios
 - Lodash
 - Cucumber-html-reporter
+- Cucumber-puppeteer (this package includes a lot of [step definitions](https://github.com/patheard/cucumber-puppeteer/tree/master/features) out of the box!)
 
 ## Example
 
