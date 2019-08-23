@@ -1,2 +1,3 @@
 node_modules/
-example/test/results
+example/test/results/
+example/node_modules/
