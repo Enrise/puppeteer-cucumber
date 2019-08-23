@@ -9,10 +9,10 @@ services:
     networks:
       - example
   puppeteer-cucumber:
-    image: enrise/puppeteer-cucumber:1
+    image: puppeteer-cucumber:latest
     volumes:
       - ./features:/home/node/app/features
-      - ./screenshots:/home/node/app/screenshots
+      - ./reports:/home/node/app/test
     user: ${USERID}:${GROUPID}
     networks:
       - example

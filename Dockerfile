@@ -1,15 +1,14 @@
-FROM node:11.9-alpine
+FROM node:12.9-alpine
 
-# Installs latest Chromium (72) package.
-RUN apk update && apk upgrade && \
-    echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
-    echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories && \
-    apk add --no-cache \
-    chromium@edge \
-    nss@edge \
-    freetype@edge \
-    harfbuzz@edge \
-    ttf-freefont@edge
+# Installs latest Chromium (76) package.
+RUN apk add --no-cache \
+      chromium \
+      nss \
+      freetype \
+      freetype-dev \
+      harfbuzz \
+      ca-certificates \
+      ttf-freefont
 
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
@@ -30,4 +29,4 @@ COPY ./package.json ./package-lock.json ./
 # Install npm packages
 RUN npm ci
 
-ENTRYPOINT [ "node_modules/.bin/cucumber-js" ]
+ENTRYPOINT [ "node_modules/.bin/cucumber-js", "--require", "./**/features/**/*.js", "--world-parameters", "{\"executablePath\":\"/usr/bin/chromium-browser\"}" ]
