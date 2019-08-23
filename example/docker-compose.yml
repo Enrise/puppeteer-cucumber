@@ -9,7 +9,7 @@ services:
     networks:
       - example
   puppeteer-cucumber:
-    image: puppeteer-cucumber:latest
+    image: enrise/puppeteer-cucumber:2.0
     volumes:
       - ./features:/home/node/app/features
       - ./reports:/home/node/app/test
