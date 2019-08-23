@@ -9,15 +9,19 @@ services:
     networks:
       - example
   puppeteer-cucumber:
-    image: enrise/puppeteer-cucumber:2.0
+    image: puppeteer-cucumber
     volumes:
-      - ./features:/home/node/app/features
-      - ./reports:/home/node/app/test
+      - ./test/features:/home/node/app/features
+      - ./test/results:/home/node/app/test
+      - ./entrypoint.sh:/home/node/app/entrypoint.sh
+      - ./node_modules:/home/node/app/node_modules
     user: ${USERID}:${GROUPID}
     networks:
       - example
     environment:
       - HOST=app
+    entrypoint:
+      - /home/node/app/entrypoint.sh
 
 networks:
   example:

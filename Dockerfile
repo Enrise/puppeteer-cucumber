@@ -13,13 +13,10 @@ RUN apk add --no-cache \
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 
-# Add user so we don't need --no-sandbox.
-RUN addgroup -S pptruser && adduser -S -g pptruser pptruser
-
 RUN mkdir -p /home/node/app \
-    && chown -R pptruser:pptruser /home/node/app
+      && chown -R node:node /home/node/app
 
-USER pptruser
+USER node
 
 WORKDIR /home/node/app
 
