@@ -9,6 +9,7 @@ stop: do-stop
 kill: do-kill
 test: do-start do-test
 test-focus: do-start do-test-focus
+update: do-update-node-modules do-show-commands
 
 # ===========================
 # Snippets
@@ -22,6 +23,7 @@ do-show-commands:
 	@echo "make stop          Stop the app container"
 	@echo "make kill          Stop the container and remove networks and containers"
 	@echo "make test          Start the container and run the regression test"
+	@echo "make update        Update the node modules"
 	@echo ""
 
 do-start:
@@ -44,3 +46,7 @@ do-test:
 do-test-focus:
 	@echo "\n=== Test ===\n"
 	${set-ids} docker-compose run --rm puppeteer-cucumber --tags '@focus'
+
+do-update-node-modules:
+	@echo "\n=== Update node modules ===\n"
+	${set-ids} docker-compose run --rm --entrypoint "npm install" puppeteer-cucumber
