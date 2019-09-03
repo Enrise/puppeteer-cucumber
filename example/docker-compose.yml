@@ -13,8 +13,7 @@ services:
     volumes:
       - ./test/features:/home/node/app/features
       - ./test/results:/home/node/app/test
-      - ./entrypoint.sh:/home/node/app/entrypoint.sh
-      - ./node_modules:/home/node/app/node_modules
+      - ./test/node_modules:/home/node/app/node_modules
     user: ${USERID}:${GROUPID}
     networks:
       - example
