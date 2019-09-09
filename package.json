@@ -1,6 +1,6 @@
 {
   "name": "puppeteer_cucumber_tools",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "A docker image which includes puppeteer and cucumber",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "chai-json": "^1.0.0",
     "cucumber": "^5.1.0",
     "cucumber-html-reporter": "^5.0.0",
-    "cucumber-puppeteer": "^1.0.14",
+    "cucumber-puppeteer": "^1.0.15",
     "lodash": "^4.17.15",
     "puppeteer": "1.17.0"
   }
