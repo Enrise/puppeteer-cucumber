@@ -52,6 +52,7 @@ Included packages:
 - Lodash
 - Cucumber-html-reporter
 - Cucumber-puppeteer (this package includes a lot of [step definitions](https://github.com/patheard/cucumber-puppeteer/tree/master/features) out of the box!)
+- Cucumber-puppeteer-axe (this package includes a few extra step definitions to test for accessibility)
 
 ## Example
 
