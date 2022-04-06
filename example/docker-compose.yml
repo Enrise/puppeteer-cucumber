@@ -7,9 +7,11 @@ services:
     ports:
       - 8080:80
     networks:
-      - example
+      example:
+        aliases:
+          - todo-app.com
   puppeteer-cucumber:
-    image: enrise/puppeteer-cucumber:2.1
+    image: puppeteer-cucumber
     volumes:
       - ./test/features:/home/node/app/features
       - ./test/results:/home/node/app/test
@@ -17,8 +19,6 @@ services:
     user: ${USERID}:${GROUPID}
     networks:
       - example
-    environment:
-      - HOST=app
 
 networks:
   example:

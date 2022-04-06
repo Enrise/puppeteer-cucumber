@@ -20,9 +20,12 @@
     "chai-json": "^1.0.0",
     "cucumber": "^5.1.0",
     "cucumber-html-reporter": "^5.0.0",
-    "cucumber-puppeteer": "1.0.15",
-    "cucumber-puppeteer-axe": "^1.0.0",
+    "cucumber-puppeteer": "^1.0.16",
+    "cucumber-puppeteer-axe": "^1.1.1",
     "lodash": "^4.17.15",
-    "puppeteer": "1.17.0"
+    "puppeteer": "^13.2.0"
+  },
+  "overrides": {
+    "puppeteer": "^13.2.0"
   }
 }
