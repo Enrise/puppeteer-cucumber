@@ -26,6 +26,7 @@
     "puppeteer": "^13.2.0"
   },
   "overrides": {
-    "puppeteer": "^13.2.0"
+    "puppeteer": "^13.2.0",
+    "axe-core": "^4.4.1"
   }
 }
